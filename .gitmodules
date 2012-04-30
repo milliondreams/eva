@@ -1,3 +1,6 @@
 [submodule "public/font-awesome"]
 	path = public/font-awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
+[submodule "public/masonry"]
+	path = public/masonry
+	url = https://github.com/desandro/masonry.git

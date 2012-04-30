@@ -44,7 +44,22 @@
 </ul>
 
 <script type="text/javascript">
-    $(".thumbnails").masonary({
-       itemSelector: "li"
+    function masonize(){
+        $(".thumbnails").masonry({
+            isAnimated: true,
+            animationOptions: {
+                duration: 500,
+                easing: 'linear'
+            },
+            containerStyle:{
+                position: 'relative'
+            },
+            columnWidth: function( containerWidth ) {
+                return containerWidth / 12;
+            }
+        });
+    }
+    $(document).ready(function(){
+            window.setTimeout(masonize, 1000);
     });
 </script>
