@@ -8,7 +8,9 @@ GET     /                           controllers.Application.index
 #Mapping the API to POST Events
 
 POST    /api/events/:clientId        controllers.Events.recordEvent(clientId)
-POST    /api/events/:clientId/        controllers.Events.recordEvent(clientId)
+POST    /api/events/:clientId/       controllers.Events.recordEvent(clientId)
+
+GET     /dashboards/:clientId/:dashId          controllers.Dashboards.getDashboard(clientId, dashId)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
