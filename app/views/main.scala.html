@@ -12,14 +12,25 @@
 
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 
-        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("masonry/js/modernizr-transitions.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("masonry/js/jquery.infinitescroll.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("masonry/jquery.masonry.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/third-party/require.js")"
+                type="text/javascript"></script>
 
-        <script src="@routes.Assets.at("javascripts/underscore-min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/backbone-min.js")" type="text/javascript"></script>
+        <script type="text/javascript">
+            Eva = require({
+                baseUrl: '@routes.Assets.at("javascripts/eva/")',
+                paths : {
+                    "jquery" : '../third-party/jquery-1.7.1.min',
+                    "jquery.masonry" : "../../masonry/jquery.masonry",
+                    "jquery.infinitescroll" : "../../masonry/js/jquery.infinitescroll.min",
+                    "modernizr": "../../masonry/js/modernizr-transitions",
+                    "bootstrap": "../../bootstrap/js/bootstrap.min"
+                }},
+                ["Eva.Base"]
+            );
+            Eva.config ={
+                client:"client01"
+            }
+    </script>
 
         <style type="text/css">
                 .navbar{

@@ -1,6 +1,11 @@
 @(style: String = "Scala", playhome: String ="http://www.playframework.org")
 
-<ul class="thumbnails dashboard">
-</ul>
+<ul class="thumbnails dashboard"></ul>
+<script type="text/javascript">
+    define("testing",["Eva.Dashboard"], function(dashboard){
+        console.log(dashboard);
+        dashboard.render("dash01");
+    });
+</script>
 
-<script src="@routes.Assets.at("javascripts/dashboards.js")" type="text/javascript"></script>
+
